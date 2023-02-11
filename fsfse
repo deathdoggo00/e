@@ -1,0 +1,15 @@
+public GameObject bulletPrefab;
+public Transform shotPoint;
+
+void Update()
+{
+    if (Input.GetButtonDown("Fire1"))
+    {
+        Shoot();
+    }
+}
+
+void Shoot()
+{
+    Instantiate(bulletPrefab, shotPoint.position, shotPoint.rotation);
+}
