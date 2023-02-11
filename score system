@@ -1,0 +1,14 @@
+public int score;
+private Text scoreText;
+
+void Start()
+{
+    scoreText = GetComponent<Text>();
+    scoreText.text = "Score: " + score;
+}
+
+public void IncreaseScore(int amount)
+{
+    score += amount;
+    scoreText.text = "Score: " + score;
+}
