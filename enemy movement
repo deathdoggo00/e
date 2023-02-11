@@ -1,0 +1,17 @@
+public float speed;
+private Rigidbody2D rb;
+private Vector2 movement;
+private GameObject player;
+
+void Start()
+{
+    rb = GetComponent<Rigidbody2D>();
+    player = GameObject.FindWithTag("Player");
+}
+
+void Update()
+{
+    Vector2 target = new Vector2(player.transform.position.x, player.transform.position.y);
+    movement = (target - (Vector2)transform.position).normalized * speed * Time.deltaTime;
+    rb.velocity = movement;
+}
